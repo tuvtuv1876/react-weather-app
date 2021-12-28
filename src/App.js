@@ -1,4 +1,3 @@
-import logo from "./logo.svg";
 import "./App.css";
 
 export default function App() {
@@ -8,11 +7,11 @@ export default function App() {
         <h1>React Weather App</h1>
       </header>
       <footer>
-        <a href="#" alt="">
+        <a href="https://github.com/tuvtuv1876/react-weather-app" alt="">
           open sourced
         </a>{" "}
         coded by tu vy ho hosted on{" "}
-        <a href="#" alt="">
+        <a href="/" alt="">
           netlify
         </a>
       </footer>
