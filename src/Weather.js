@@ -1,24 +1,25 @@
 import React, { useState } from "react";
 import axios from "axios";
+import FormattedDate from "./FormattedDate";
 
 import "./Weather.css";
 
 export default function Weather(props) {
-  const [loaded, setLoaded] = useState(false);
   const [Weather, setWeather] = useState("");
 
   function handleResponse(response) {
     setWeather({
-      Temperature: response.data.main.temp,
-      Percipitation: "#",
-      Humidity: response.data.main.humidity,
-      Wind: response.data.wind.speed,
-      Description: response.data.weather[0].description,
+      temperature: response.data.main.temp,
+      percipitation: "#",
+      humidity: response.data.main.humidity,
+      wind: response.data.wind.speed,
+      date: new Date(response.data.dt * 1000),
+      description: response.data.weather[0].description,
+      loaded: true,
     });
-    setLoaded(true);
   }
 
-  if (loaded) {
+  if (Weather.loaded) {
     return (
       <div className="Weather">
         <form className="w-100">
@@ -49,22 +50,24 @@ export default function Weather(props) {
               alt=""
             />
             <span className="main-temperature">
-              {Math.round(Weather.Temperature)}
+              {Math.round(Weather.temperature)}
             </span>
             °C|°F
           </div>
           <div className="overview2 col-4">
             <ul>
               <li>Percipitation: 94%</li>
-              <li>Humidity: {Weather.Humidity}%</li>
-              <li>Wind: {Weather.Wind}km/h</li>
+              <li>Humidity: {Weather.humidity}%</li>
+              <li>Wind: {Weather.wind}km/h</li>
             </ul>
           </div>
           <div className="overview3 col-4">
             <ul>
               <li className="city">{props.city}</li>
-              <li>Tuesday, 16:47</li>
-              <li>{Weather.Description}</li>
+              <li>
+                <FormattedDate date={Weather.date} />
+              </li>
+              <li>{Weather.description}</li>
             </ul>
           </div>
         </div>
