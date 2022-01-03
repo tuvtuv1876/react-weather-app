@@ -5,7 +5,6 @@ import "./Weather.css";
 
 export default function Weather(props) {
   const [weather, setWeather] = useState("");
-  const [loaded, setLoaded] = useState(false);
   const [city, setCity] = useState(props.defaultCity);
 
   function handleResponse(response) {
@@ -17,8 +16,8 @@ export default function Weather(props) {
       city: response.data.name,
       date: new Date(response.data.dt * 1000),
       description: response.data.weather[0].description,
+      loaded: true,
     });
-    setLoaded(true);
   }
 
   function search() {
@@ -36,7 +35,7 @@ export default function Weather(props) {
     setCity(event.target.value);
   }
 
-  if (loaded) {
+  if (weather.loaded) {
     return (
       <div className="Weather">
         <form className="w-100" onSubmit={handleSubmit}>
@@ -47,6 +46,7 @@ export default function Weather(props) {
                 className="form-control"
                 id="input-text"
                 placeholder="Enter a city here"
+                onChange={updateChange}
               />
             </div>
 
@@ -56,7 +56,6 @@ export default function Weather(props) {
                 id="submit-button"
                 className="btn btn-primary mb-3"
                 value="Search"
-                onChange={updateChange}
               />
             </div>
           </div>
