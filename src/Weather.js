@@ -9,6 +9,7 @@ export default function Weather(props) {
 
   function handleResponse(response) {
     setWeather({
+      icon: response.data.weather[0].icon,
       temperature: response.data.main.temp,
       percipitation: "#",
       humidity: response.data.main.humidity,

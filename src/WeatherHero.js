@@ -1,21 +1,21 @@
 import React from "react";
 import FormattedDate from "./FormattedDate";
+import WeatherIcon from "./WeatherIcon";
 
 export default function WeatherHero(props) {
   return (
     <div className="WeatherHero">
       <div className="hero row">
-        <div className="overview1 col-4 p-0">
-          <img
-            src="https://ssl.gstatic.com/onebox/weather/64/rain_light.png"
-            alt=""
-          />
+        <div className="overview1 col-5 p-0">
+          <span className="floating-left">
+            <WeatherIcon code={props.data.icon} />
+          </span>
           <span className="main-temperature">
             {Math.round(props.data.temperature)}
           </span>
           °C|°F
         </div>
-        <div className="overview2 col-4">
+        <div className="overview2 col-3">
           <ul>
             <li>Percipitation: 94%</li>
             <li>Humidity: {props.data.humidity}%</li>
