@@ -15,7 +15,6 @@ export default function WeatherHero(props) {
         </div>
         <div className="overview2 col-3">
           <ul>
-            <li>Percipitation: 94%</li>
             <li>Humidity: {props.data.humidity}%</li>
             <li>Wind: {props.data.wind}km/h</li>
           </ul>
