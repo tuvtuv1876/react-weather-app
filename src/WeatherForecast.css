@@ -1,16 +1,18 @@
 .WeatherForecast .WeatherForecast-title {
   font-size: 14px;
   line-height: 20px;
+  padding: 20px 0 20px 5px;
 }
 
 .WeatherForecast .row {
   text-align: center;
 }
 
-.WeatherForecast .WeatherForecast-temperature {
-  font-size: 12px;
-}
-
 .WeatherForecast .WeatherForecast-temp-night {
   opacity: 0.6;
+}
+
+.WeatherForecast .ForecastDay {
+  font-size: 13px;
+  line-height: 24px;
 }
