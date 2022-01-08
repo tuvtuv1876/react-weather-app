@@ -10,6 +10,7 @@ export default function Weather(props) {
 
   function handleResponse(response) {
     setWeather({
+      coordinates: response.data.coord,
       icon: response.data.weather[0].icon,
       temperature: response.data.main.temp,
       percipitation: "#",
@@ -26,6 +27,7 @@ export default function Weather(props) {
     let apiKey = "b90f000267947bf1f6e5a78a0ca5e027";
     let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=${apiKey}`;
     axios.get(apiUrl).then(handleResponse);
+    console.log();
   }
 
   function handleSubmit(event) {
@@ -62,7 +64,7 @@ export default function Weather(props) {
           </div>
         </form>
         <WeatherHero data={weather} />
-        <WeatherForecast />
+        <WeatherForecast coordinates={weather.coordinates} />
       </div>
     );
   } else {
