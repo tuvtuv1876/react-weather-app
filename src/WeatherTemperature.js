@@ -21,20 +21,24 @@ export default function WeatherTemperature(props) {
     return (
       <span className="celsius">
         <span className="main-temperature">{Math.round(props.celsius)}</span>
-        °C |{" "}
-        <a href="/" onClick={showFahrenheit}>
-          °F
-        </a>
+        <span className="main-temperature-links">
+          °C |{" "}
+          <a href="/" onClick={showFahrenheit}>
+            °F
+          </a>
+        </span>
       </span>
     );
   else {
     return (
       <span className="fahrenheit">
         <span className="main-temperature">{fahrenheit()}</span>
-        <a href="/" onClick={showCelsius}>
-          °C
-        </a>{" "}
-        | °F
+        <span className="main-temperature-links">
+          <a href="/" onClick={showCelsius}>
+            °C
+          </a>{" "}
+          | °F
+        </span>
       </span>
     );
   }

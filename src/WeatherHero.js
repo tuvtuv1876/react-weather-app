@@ -7,13 +7,13 @@ export default function WeatherHero(props) {
   return (
     <div className="WeatherHero">
       <div className="hero row">
-        <div className="overview1 col-5 p-0">
+        <div className="overview1 col-4 p-0">
           <span className="floating-left">
-            <WeatherIcon code={props.data.icon} />
+            <WeatherIcon code={props.data.icon} size={40} />
           </span>
           <WeatherTemperature celsius={props.data.temperature} />
         </div>
-        <div className="overview2 col-3">
+        <div className="overview2 col-4">
           <ul>
             <li>Humidity: {props.data.humidity}%</li>
             <li>Wind: {props.data.wind}km/h</li>
