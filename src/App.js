@@ -9,9 +9,9 @@ export default function App() {
         <Weather defaultCity="Zurich" />
         <footer>
           <a href="https://github.com/tuvtuv1876/react-weather-app" alt="">
-            open sourced
+            open source
           </a>{" "}
-          coded by tu vy ho hosted on{" "}
+          coded by tu vy ho and hosted on{" "}
           <a href="https://friendly-meninsky-d87091.netlify.app" alt="">
             netlify
           </a>
