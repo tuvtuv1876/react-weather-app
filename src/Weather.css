@@ -1,4 +1,5 @@
 .Weather {
+  background-color: white;
   border: 1px solid #d3d3d3;
   border-radius: 5px;
   display: auto;
@@ -7,8 +8,6 @@
 }
 
 .Weather #submit-button {
-  padding-left: 39px;
-  padding-right: 39px;
 }
 
 .Weather .hero {
