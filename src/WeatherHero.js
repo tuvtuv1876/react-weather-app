@@ -5,7 +5,7 @@ import WeatherTemperature from "./WeatherTemperature";
 
 export default function WeatherHero(props) {
   return (
-    <div className="WeatherHero">
+    <div className="WeatherHero mt-3">
       <div className="hero row">
         <div className="overview1 col-4 p-0">
           <span className="floating-left">
